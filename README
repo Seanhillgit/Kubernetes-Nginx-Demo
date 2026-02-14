@@ -1,0 +1,32 @@
+# NGINX Kubernetes Demo ☸️
+
+A lightweight demo showing how to containerize a static web app, deploy it with a k8s cluster and expose externally using NGINX ingress Controller. This project is ideal for learning and demonstrating some of the fundamentals. 
+
+---
+
+## Build & Push 🧱 
+
+- `docker build -t docker build -t _dockerusername_/nginx-demo:latest ./app`
+
+- `docker push _dockerusername_/nginx-demo:latest`
+
+  
+  *Make sure you are logged in*: `docker login`
+
+## Create the namespace 📦
+- `kubectl apply -f k8s/namespace.yaml`   
+
+## Deploy all resources 🚀
+
+- `kubectl apply -f ./k8s`
+
+    Deployment  
+    Service  
+    Ingress  
+    Others
+
+ ## Verify 🔥
+
+- `kubectl get pods -n nginx-demo`
+- `kubectl get ingress -n nginx-demo`
+
